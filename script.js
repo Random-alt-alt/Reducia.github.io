@@ -24,7 +24,6 @@ const observer = new IntersectionObserver((entries, observer) => {
 scrollRevealElements.forEach(el => observer.observe(el));
 scrollRevealItems.forEach(el => observer.observe(el));
 
-
 // --- Active Navigation Link Highlighting ---
 const sections = document.querySelectorAll('section');
 const navLinks = document.querySelectorAll('nav ul li a');
@@ -32,16 +31,13 @@ const navLinks = document.querySelectorAll('nav ul li a');
 const navObserverOptions = {
   root: null,
   rootMargin: '-50% 0px -50% 0px', // Trigger when section is roughly in the middle of the viewport
-  threshold: 0 // We just need to know if it intersects
+  threshold: 0
 };
 
 const navObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      // Remove active class from all links
       navLinks.forEach(link => link.classList.remove('active'));
-
-      // Add active class to the corresponding link
       const targetId = entry.target.id;
       const activeLink = document.querySelector(`nav ul li a[href="#${targetId}"]`);
       if (activeLink) {
@@ -51,17 +47,17 @@ const navObserver = new IntersectionObserver((entries) => {
   });
 }, navObserverOptions);
 
-sections.forEach(section => {
-  navObserver.observe(section);
-});
-
+sections.forEach(section => navObserver.observe(section));
 
 // --- Client-Side Form Validation and EmailJS Submission ---
 const contactForm = document.getElementById('contactForm');
 
+// Initialize EmailJS with PUBLIC key
+emailjs.init("D1kAEOFgpeA7mLjQe"); // <-- your public key
+
 if (contactForm) {
   contactForm.addEventListener('submit', async function(event) {
-    event.preventDefault(); // Prevent default form submission
+    event.preventDefault(); 
 
     const name = document.getElementById('contactName').value.trim();
     const email = document.getElementById('contactEmail').value.trim();
@@ -77,17 +73,20 @@ if (contactForm) {
       return;
     }
 
-    // EmailJS specific submission
     try {
-      // IMPORTANT: Replace 'YOUR_SERVICE_ID' and 'YOUR_TEMPLATE_ID' with your actual EmailJS IDs
-      const result = await emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this);
-      
-      console.log('EmailJS Success:', result.status, result.text);
-      alert('Thank you for your message! We will get back to you shortly.');
-      contactForm.reset(); // Clear the form
+      const result = await emailjs.send("service_c82e22l", "template_iga2c4v", {
+        from_name: name,
+        reply_to: email,
+        message: message
+      });
+
+      console.log("EmailJS Success:", result.status, result.text);
+      alert("Your message has been sent! Check your inbox.");
+      contactForm.reset();
+
     } catch (error) {
-      console.error('EmailJS Failed:', error);
-      alert('There was an error sending your message. Please try again later.');
+      console.error("EmailJS Failed:", error);
+      alert("There was an error sending your message. Please try again later.");
     }
   });
 }
@@ -97,7 +96,7 @@ function validateEmail(email) {
   return re.test(String(email).toLowerCase());
 }
 
-// --- Back to Top Button (Optional, but adds functionality) ---
+// --- Back to Top Button ---
 const backToTopButton = document.createElement('button');
 backToTopButton.textContent = '↑';
 backToTopButton.classList.add('back-to-top');
@@ -123,7 +122,7 @@ backToTopButton.style.cssText = `
 `;
 
 window.addEventListener('scroll', () => {
-  if (window.scrollY > 300) { // Show button after scrolling 300px
+  if (window.scrollY > 300) {
     backToTopButton.style.opacity = '1';
     backToTopButton.style.transform = 'translateY(0)';
   } else {
