@@ -7,7 +7,7 @@
   --text-light: #fff;
   --bg-light: #f9f9f9;
   --bg-dark: #2c3e50;
-  --fancy-texture: url('data:image/svg+xml;base64,...'); /* Subtle blocky pattern */
+  --fancy-texture: url('data:image/svg+xml;base64,...'); /* placeholder for subtle blocky pattern */
 }
 
 /* Global Styles */
@@ -30,7 +30,7 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
-/* Ocean Text */
+/* Ocean text */
 .ocean-text { color: #00796b; }
 
 /* Buttons */
@@ -94,17 +94,8 @@ nav ul li a.active, nav ul li a:hover { color: var(--primary-color); font-weight
 .bg-ocean { background-color: #b2ebf2; background-image: var(--fancy-texture); background-repeat: repeat; background-size: 60px; }
 .bg-light { background-color: var(--bg-light); background-image: var(--fancy-texture); background-repeat: repeat; background-size: 60px; }
 
-/* Contact Description Line Centered */
-.contact-description {
-  max-width: 700px;
-  margin: 0 auto 2rem auto;
-  text-align: center;
-  font-size: 1.15rem;
-  line-height: 1.6;
-  color: #00796b;
-}
-
-/* Contact Form */
+/* Contact */
+.contact-description { max-width:700px; margin:0 auto 2rem auto; text-align:center; font-size:1.15rem; line-height:1.6; color:#00796b; }
 .contact-form { max-width:600px; margin:0 auto; display:flex; flex-direction:column; gap:1rem; padding:2rem; background:#fff; border-radius:10px; box-shadow:0 6px 20px rgba(0,0,0,0.08); }
 .contact-form input, .contact-form textarea { padding:1rem; border:1px solid #ddd; border-radius:5px; font-size:1rem; }
 .contact-form input:focus, .contact-form textarea:focus { border-color: var(--primary-color); outline:none; box-shadow:0 0 0 3px rgba(0,191,165,0.2); }
