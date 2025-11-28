@@ -1,16 +1,11 @@
 // --- Initialize EmailJS ---
-emailjs.init('D1kAEOFgpeA7mLjQe'); // Your public key
+emailjs.init('D1kAEOFgpeA7mLjQe'); // Public key
 
 // --- Scroll Reveal Animations ---
 const scrollRevealElements = document.querySelectorAll('.scroll-reveal');
 const scrollRevealItems = document.querySelectorAll('.scroll-reveal-item');
 
-const observerOptions = {
-  root: null,
-  rootMargin: '0px',
-  threshold: 0.1
-};
-
+const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
 const observer = new IntersectionObserver((entries, observer) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -27,29 +22,21 @@ scrollRevealItems.forEach(el => observer.observe(el));
 const sections = document.querySelectorAll('section');
 const navLinks = document.querySelectorAll('nav ul li a');
 
-const navObserverOptions = {
-  root: null,
-  rootMargin: '-50% 0px -50% 0px',
-  threshold: 0
-};
-
 const navObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       navLinks.forEach(link => link.classList.remove('active'));
-      const targetId = entry.target.id;
-      const activeLink = document.querySelector(`nav ul li a[href="#${targetId}"]`);
+      const activeLink = document.querySelector(`nav ul li a[href="#${entry.target.id}"]`);
       if (activeLink) activeLink.classList.add('active');
     }
   });
-}, navObserverOptions);
+}, { root: null, rootMargin: '-50% 0px -50% 0px', threshold: 0 });
 
 sections.forEach(section => navObserver.observe(section));
 
 // --- Back to Top Button ---
 const backToTopButton = document.createElement('button');
 backToTopButton.textContent = '↑';
-backToTopButton.classList.add('back-to-top');
 backToTopButton.style.cssText = `
   position: fixed;
   bottom: 20px;
@@ -84,7 +71,7 @@ backToTopButton.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
-// --- Contact Form Submission ---
+// --- Contact Form Submission Using emailjs.send ---
 const contactForm = document.getElementById('contactForm');
 
 if (contactForm) {
@@ -95,7 +82,6 @@ if (contactForm) {
     const email = document.getElementById('contactEmail').value.trim();
     const message = document.getElementById('contactMessage').value.trim();
 
-    // Basic validation
     if (!name || !email || !message) {
       alert('Please fill in all fields.');
       return;
@@ -106,21 +92,21 @@ if (contactForm) {
       return;
     }
 
-    console.log('Attempting to send email with:', { name, email, message });
+    console.log('Sending email with values:', { name, email, message });
 
     try {
-      const result = await emailjs.sendForm(
-        'service_c82e22l',       // Your Service ID
-        'template_iga2c4v',      // Your Template ID
-        this                     // Form element
+      const result = await emailjs.send(
+        'service_c82e22l',       // Service ID
+        'template_iga2c4v',      // Template ID
+        { name, email, message }  // Explicit variables
       );
 
-      console.log('EmailJS Success:', result.status, result.text);
-      alert('Thank you! Your message has been sent successfully.');
+      console.log('Email sent successfully:', result.status, result.text);
+      alert('Thank you! Your message has been sent.');
       contactForm.reset();
     } catch (error) {
-      console.error('EmailJS Failed:', error);
-      alert('There was an error sending your message. Please check the console for details.');
+      console.error('EmailJS send() failed:', error);
+      alert('Error sending message. Check console for details.');
     }
   });
 }
