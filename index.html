@@ -8,7 +8,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <!-- Header -->
   <header>
     <div class="container">
       <div class="logo">Reducia</div>
@@ -24,34 +23,30 @@
     </div>
   </header>
 
-  <!-- Main -->
   <main>
-    <!-- Hero -->
     <section id="home" class="hero scroll-reveal">
       <div class="container">
-        <h1>Experience Unmatched Confidence with Reducia</h1>
+        <h1 class="gradient-text">Experience Unmatched Confidence with Reducia</h1>
         <p>Revolutionary sweat reduction for a fresh, dry, and confident you.</p>
         <a href="#product" class="btn">Discover Reducia</a>
       </div>
     </section>
 
-    <!-- About -->
     <section id="about" class="section-padded scroll-reveal">
       <div class="container">
         <h2>About Reducia</h2>
-        <p>Reducia is meticulously engineered to provide superior sweat reduction, allowing you to live your life without the worry of excessive perspiration. Our advanced formula works in harmony with your body to deliver long-lasting dryness and comfort, empowering you to embrace every moment with poise.</p>
+        <p>Reducia is meticulously engineered to provide superior sweat reduction, allowing you to live your life without the worry of excessive perspiration.</p>
         <p>Developed with cutting-edge science and premium ingredients, Reducia is more than just a product – it's a lifestyle upgrade.</p>
       </div>
     </section>
 
-    <!-- Product -->
     <section id="product" class="section-padded bg-light scroll-reveal">
       <div class="container">
         <h2>Our Product</h2>
         <div class="product-grid">
           <div class="product-item scroll-reveal-item">
             <h3>Reducia Advanced Formula</h3>
-            <p>Our flagship product, offering powerful and discreet sweat protection for up to 24 hours. Gentle on skin, tough on sweat.</p>
+            <p>Our flagship product, offering powerful and discreet sweat protection for up to 24 hours.</p>
             <ul>
               <li>Long-lasting protection</li>
               <li>Quick-drying formula</li>
@@ -61,7 +56,7 @@
           </div>
           <div class="product-item scroll-reveal-item">
             <h3>Reducia Travel Size</h3>
-            <p>Compact and convenient, perfect for on-the-go freshness. Never compromise on confidence, wherever you are.</p>
+            <p>Compact and convenient, perfect for on-the-go freshness.</p>
             <ul>
               <li>TSA-friendly</li>
               <li>Discreet design</li>
@@ -73,14 +68,13 @@
       </div>
     </section>
 
-    <!-- Testimonials -->
     <section id="testimonials" class="section-padded scroll-reveal">
       <div class="container">
         <h2>What Our Customers Say</h2>
         <div class="testimonial-grid">
           <div class="testimonial-item scroll-reveal-item">
             <p>"Reducia has truly changed my life! I no longer dread social events. It's incredibly effective and gives me so much confidence."</p>
-            <span>— Abby V.(Celebrity), Ontario</span>
+            <span>— Abby V., Ontario</span>
           </div>
           <div class="testimonial-item scroll-reveal-item">
             <p>"I've tried countless products, but Reducia is the only one that delivers on its promise. Highly recommend for anyone struggling with sweat."</p>
@@ -90,43 +84,31 @@
       </div>
     </section>
 
-    <!-- Contact -->
     <section id="contact" class="section-padded bg-light scroll-reveal">
       <div class="container">
         <h2>Get in Touch</h2>
         <p>Have questions or need assistance? Our dedicated team is here to help.</p>
         <form class="contact-form" id="contactForm">
-          <input type="text" placeholder="Your Name" id="contactName" name="from_name" required />
-          <input type="email" placeholder="Your Email" id="contactEmail" name="reply_to" required />
+          <input type="text" placeholder="Your Name" id="contactName" name="name" required />
+          <input type="email" placeholder="Your Email" id="contactEmail" name="email" required />
           <textarea placeholder="Your Message" rows="5" id="contactMessage" name="message" required></textarea>
-          <button type="submit" class="btn">
-            Send Message <span class="plane">✈</span>
-          </button>
+          <button type="submit" class="btn">Send Message</button>
         </form>
+        <div id="formConfirmation" class="form-confirmation">Message sent successfully!</div>
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
   <footer>
     <div class="container">
-      <p>&copy; 2025 Reducia. All rights reserved.</p>
+      <p>&copy; <span id="year"></span> Reducia. All rights reserved.</p>
       <div class="footer-links">
         <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
       </div>
     </div>
   </footer>
 
-  <!-- Floating confirmation -->
-  <div id="formConfirmation" class="form-confirmation">✔ Thank you! Your message has been sent.</div>
-
-  <!-- EmailJS SDK -->
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-  <script>
-    emailjs.init("D1kAEOFgpeA7mLjQe"); // Your public key
-  </script>
-
-  <!-- Custom JS -->
   <script src="script.js"></script>
 </body>
 </html>
