@@ -1,25 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Reducia — Advanced Sweat Reduction</title>
-
-  <!-- Performance hints -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-
-  <!-- Critical stylesheet -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reducia - Advanced Sweat Reduction</title>
   <link rel="stylesheet" href="styles.css" />
-
-  <!-- Reduce flash of unstyled content -->
-  <meta name="theme-color" content="#3f51b5" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <!-- Header -->
+  <!-- Slash container for animations -->
+  <div id="slash-container"></div>
+
   <header>
-    <div class="container header-inner">
+    <div class="container">
       <div class="logo">Reducia</div>
       <nav>
         <ul>
@@ -30,148 +23,98 @@
           <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
       </nav>
-      <button id="mobileNavToggle" aria-label="Toggle navigation" class="mobile-nav-toggle">☰</button>
     </div>
   </header>
 
-  <!-- MAIN -->
   <main>
-    <!-- HERO with decorative SVGs and animated gradient -->
-    <section id="home" class="hero scroll-reveal" aria-label="Hero">
-      <div class="hero-bg">
-        <!-- decorative animated SVG blobs (inline for low network cost) -->
-        <svg class="hero-blob blob-1" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <g transform="translate(300,300)">
-            <path id="p1" d="M120,-140C168,-116,210,-84,219,-39C228,6,204,63,172,106C140,149,100,178,53,188C6,198,-45,189,-88,165C-131,141,-166,102,-183,52C-200,2,-199,-61,-169,-106C-139,-150,-80,-177,-30,-181C20,-185,80,-167,120,-140Z" />
-          </g>
-        </svg>
-
-        <svg class="hero-blob blob-2" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <g transform="translate(300,300)">
-            <path id="p2" d="M80,-100C112,-84,145,-68,164,-36C183,-3,188,30,171,66C154,102,116,141,74,155C32,169,-17,158,-56,135C-95,112,-125,77,-142,33C-159,-11,-164,-62,-143,-96C-122,-130,-76,-148,-33,-154C10,-161,50,-155,80,-100Z"/>
-          </g>
-        </svg>
-      </div>
-
-      <div class="container hero-content">
-        <h1>Experience Unmatched Confidence with <span class="gradient-text">Reducia</span></h1>
-        <p class="lead">Revolutionary sweat reduction for a fresh, dry, and confident you.</p>
-        <div class="hero-ctas">
-          <a class="btn btn-gradient" href="#product">Discover Reducia</a>
-          <a class="btn btn-outline" href="#contact">Contact Us</a>
-        </div>
+    <section id="home" class="hero scroll-reveal">
+      <div class="container">
+        <h1>Experience Unmatched Confidence with Reducia</h1>
+        <p>Revolutionary sweat reduction for a fresh, dry, and confident you.</p>
+        <a href="#product" class="btn">Discover Reducia</a>
       </div>
     </section>
 
-    <!-- ABOUT -->
     <section id="about" class="section-padded scroll-reveal">
       <div class="container">
         <h2>About Reducia</h2>
-        <p>Reducia is meticulously engineered to provide superior sweat reduction, allowing you to live your life without the worry of excessive perspiration. Our advanced formula works in harmony with your body to deliver long-lasting dryness and comfort, empowering you to embrace every moment with poise.</p>
+        <p>Reducia is meticulously engineered to provide superior sweat reduction, allowing you to live your life without the worry of excessive perspiration.</p>
         <p>Developed with cutting-edge science and premium ingredients, Reducia is more than just a product – it's a lifestyle upgrade.</p>
       </div>
     </section>
 
-    <!-- PRODUCT -->
     <section id="product" class="section-padded bg-light scroll-reveal">
       <div class="container">
         <h2>Our Product</h2>
         <div class="product-grid">
-          <!-- use lazy picture with srcset -->
-          <article class="product-item scroll-reveal-item">
-            <picture>
-              <source srcset="assets/reducio-product.webp" type="image/webp">
-              <img loading="lazy" src="assets/reducio-product.jpg" alt="Reducia Advanced" width="800" height="600">
-            </picture>
+          <div class="product-item scroll-reveal-item">
             <h3>Reducia Advanced Formula</h3>
-            <p>Our flagship product, offering powerful and discreet sweat protection for up to 24 hours.</p>
+            <p>Our flagship product, offering powerful and discreet sweat protection for up to 24 hours. Gentle on skin, tough on sweat.</p>
             <ul>
               <li>Long-lasting protection</li>
               <li>Quick-drying formula</li>
               <li>Suitable for all skin types</li>
             </ul>
-            <a class="btn btn-gradient" href="#">Learn More</a>
-          </article>
-
-          <article class="product-item scroll-reveal-item">
-            <picture>
-              <source srcset="assets/reducio-travel.webp" type="image/webp">
-              <img loading="lazy" src="assets/reducio-travel.jpg" alt="Reducia Travel Size" width="800" height="600">
-            </picture>
+            <a href="#" class="btn btn-secondary">Learn More</a>
+          </div>
+          <div class="product-item scroll-reveal-item">
             <h3>Reducia Travel Size</h3>
-            <p>Compact and convenient — perfect for on-the-go freshness.</p>
+            <p>Compact and convenient, perfect for on-the-go freshness. Never compromise on confidence, wherever you are.</p>
             <ul>
               <li>TSA-friendly</li>
               <li>Discreet design</li>
               <li>Same powerful formula</li>
             </ul>
-            <a class="btn btn-gradient" href="#">Shop Now</a>
-          </article>
+            <a href="#" class="btn btn-secondary">Shop Now</a>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- TESTIMONIALS -->
     <section id="testimonials" class="section-padded scroll-reveal">
       <div class="container">
         <h2>What Our Customers Say</h2>
         <div class="testimonial-grid">
-          <blockquote class="testimonial-item scroll-reveal-item">
+          <div class="testimonial-item scroll-reveal-item">
             <p>"Reducia has truly changed my life! I no longer dread social events. It's incredibly effective and gives me so much confidence."</p>
-            <cite>— Abby V., Ontario</cite>
-          </blockquote>
-
-          <blockquote class="testimonial-item scroll-reveal-item">
-            <p>"I've tried countless products, but Reducia is the only one that delivers on its promise. Highly recommend."</p>
-            <cite>— Karan B., Frisco</cite>
-          </blockquote>
+            <span>— Abby V., Ontario</span>
+          </div>
+          <div class="testimonial-item scroll-reveal-item">
+            <p>"I've tried countless products, but Reducia is the only one that delivers on its promise. Highly recommend for anyone struggling with sweat."</p>
+            <span>— Karan B., Frisco</span>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- CONTACT -->
     <section id="contact" class="section-padded bg-light scroll-reveal">
       <div class="container">
         <h2>Get in Touch</h2>
         <p>Have questions or need assistance? Our dedicated team is here to help.</p>
-
-        <!-- Contact form: name attributes match EmailJS template -->
-        <form id="contactForm" class="contact-form" aria-label="Contact form">
-          <div class="field-row">
-            <input id="contactName" name="from_name" type="text" placeholder="Your Name" autocomplete="name" required>
-            <input id="contactEmail" name="reply_to" type="email" placeholder="Your Email" autocomplete="email" required>
-          </div>
-          <textarea id="contactMessage" name="message" rows="5" placeholder="Your Message" required></textarea>
-
-          <div class="form-row">
-            <button class="btn btn-gradient" type="submit">
-              <span class="btn-text">Send Message</span>
-              <span class="btn-ico" aria-hidden>✈</span>
-            </button>
-            <div class="form-meta">
-              <small>We reply within 24 hours. No spam, ever.</small>
-            </div>
-          </div>
+        <form class="contact-form" id="contactForm">
+          <input type="text" placeholder="Your Name" id="contactName" name="from_name" required />
+          <input type="email" placeholder="Your Email" id="contactEmail" name="reply_to" required />
+          <textarea placeholder="Your Message" rows="5" id="contactMessage" name="message" required></textarea>
+          <button type="submit" class="btn">Send Message</button>
+          <div id="formConfirmation" class="form-confirmation">Message sent successfully!</div>
         </form>
       </div>
     </section>
   </main>
 
-  <!-- FOOTER -->
   <footer>
     <div class="container">
       <p>&copy; <span id="year"></span> Reducia. All rights reserved.</p>
-      <div class="footer-links"><a href="#">Privacy Policy</a> | <a href="#">Terms</a></div>
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+      </div>
     </div>
   </footer>
 
-  <!-- confirmation -->
-  <div id="formConfirmation" class="form-confirmation" role="status" aria-live="polite">✔ Message sent — we'll be in touch!</div>
-
-  <!-- EmailJS SDK (deferred b/c we initialize after load) -->
-  <script defer src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-
-  <!-- Load main script deferred for performance -->
-  <script defer src="script.js"></script>
+  <!-- EmailJS SDK -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
+
+
