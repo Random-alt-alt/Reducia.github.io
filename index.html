@@ -27,37 +27,36 @@
   </header>
 
   <main>
+    <!-- Hero Section -->
     <section id="home" class="hero scroll-reveal">
       <div class="container">
         <h1 class="gradient-text">Experience Unmatched Confidence with Reducia</h1>
-        <p class="ocean-text">
-          Revolutionary sweat reduction for a fresh, dry, and confident you.
-        </p>
-        <a href="#product" class="btn">Discover Reducia</a>
+        <p class="ocean-text">Revolutionary sweat reduction for a fresh, dry, and confident you.</p>
+        <a href="#product" class="btn gradient-btn">Discover Reducia</a>
       </div>
     </section>
 
-    <section id="about" class="section-padded scroll-reveal bg-ocean-light">
+    <!-- About Section -->
+    <section id="about" class="section-padded scroll-reveal bg-ocean">
       <div class="container">
         <h2 class="gradient-text">About Reducia</h2>
-        <p class="ocean-text">
+        <p>
           Reducia is meticulously engineered to provide superior sweat reduction, allowing you to live your life without the worry of excessive perspiration. Our advanced formula works in harmony with your body to deliver long-lasting dryness and comfort, empowering you to embrace every moment with poise.
         </p>
-        <p class="ocean-text">
+        <p>
           Developed with cutting-edge science and premium ingredients, Reducia is more than just a product – it's a lifestyle upgrade.
         </p>
       </div>
     </section>
 
-    <section id="product" class="section-padded bg-ocean scroll-reveal">
+    <!-- Product Section -->
+    <section id="product" class="section-padded scroll-reveal bg-light">
       <div class="container">
         <h2 class="gradient-text">Our Product</h2>
         <div class="product-grid">
           <div class="product-item scroll-reveal-item">
             <h3>Reducia Advanced Formula</h3>
-            <p>
-              Our flagship product, offering powerful and discreet sweat protection for up to 24 hours. Gentle on skin, tough on sweat.
-            </p>
+            <p>Our flagship product, offering powerful and discreet sweat protection for up to 24 hours. Gentle on skin, tough on sweat.</p>
             <ul>
               <li>Long-lasting protection</li>
               <li>Quick-drying formula</li>
@@ -67,9 +66,7 @@
           </div>
           <div class="product-item scroll-reveal-item">
             <h3>Reducia Travel Size</h3>
-            <p>
-              Compact and convenient, perfect for on-the-go freshness. Never compromise on confidence, wherever you are.
-            </p>
+            <p>Compact and convenient, perfect for on-the-go freshness. Never compromise on confidence, wherever you are.</p>
             <ul>
               <li>TSA-friendly</li>
               <li>Discreet design</li>
@@ -81,37 +78,35 @@
       </div>
     </section>
 
-    <section id="testimonials" class="section-padded scroll-reveal bg-ocean-light">
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section-padded scroll-reveal bg-ocean">
       <div class="container">
         <h2 class="gradient-text">What Our Customers Say</h2>
         <div class="testimonial-grid">
           <div class="testimonial-item scroll-reveal-item">
-            <p>
-              "Reducia has truly changed my life! I no longer dread social events. It's incredibly effective and gives me so much confidence."
-            </p>
+            <p>"Reducia has truly changed my life! I no longer dread social events. It's incredibly effective and gives me so much confidence."</p>
             <span>— Abby V.(Celebrity), Ontario</span>
           </div>
           <div class="testimonial-item scroll-reveal-item">
-            <p>
-              "I've tried countless products, but Reducia is the only one that delivers on its promise. Highly recommend for anyone struggling with sweat."
-            </p>
+            <p>"I've tried countless products, but Reducia is the only one that delivers on its promise. Highly recommend for anyone struggling with sweat."</p>
             <span>— Karan B., Frisco</span>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- Contact Section -->
     <section id="contact" class="section-padded scroll-reveal bg-ocean">
       <div class="container">
         <h2 class="gradient-text">Get in Touch</h2>
-        <p class="ocean-text">
+        <p class="contact-description">
           Have questions or need assistance? Our dedicated team is here to help.
         </p>
         <form class="contact-form" id="contactForm">
           <input type="text" placeholder="Your Name" id="contactName" name="name" required />
           <input type="email" placeholder="Your Email" id="contactEmail" name="email" required />
           <textarea placeholder="Your Message" rows="5" id="contactMessage" name="message" required></textarea>
-          <button type="submit" class="btn">Send Message</button>
+          <button type="submit" class="btn gradient-btn">Send Message</button>
           <div id="formStatus" class="form-status"></div>
         </form>
       </div>
@@ -128,7 +123,11 @@
   </footer>
 
   <!-- EmailJS SDK -->
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script>
+    emailjs.init("D1kAEOFgpeA7mLjQe");
+  </script>
+
   <script src="script.js"></script>
 </body>
 </html>
