@@ -113,7 +113,7 @@
       </section>
 
       <section id="contact" class="section-padded bg-light scroll-reveal">
-        <div class="container"></div>
+        <div class="container">
           <h2>Get in Touch</h2>
           <p>
             Have questions or need assistance? Our dedicated team is here to
@@ -121,8 +121,8 @@
           </p>
           <!-- Form action removed as EmailJS handles submission via JS -->
           <form class="contact-form" id="contactForm">
-            <input type="text" placeholder="Your Name" id="contactName" name="name" required />
-            <input type="email" placeholder="Your Email" id="contactEmail" name="email" required />
+            <input type="text" placeholder="Your Name" id="contactName" name="from_name" required />
+            <input type="email" placeholder="Your Email" id="contactEmail" name="reply_to" required />
             <textarea placeholder="Your Message" rows="5" id="contactMessage" name="message" required></textarea>
             <button type="submit" class="btn">Send Message</button>
           </form>
@@ -142,13 +142,15 @@
     <!-- EmailJS SDK -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script type="text/javascript">
-      // Initialize EmailJS with your Public Key
-      // IMPORTANT: Replace 'YOUR_PUBLIC_KEY' with your actual EmailJS Public Key
-      (function() {
-        emailjs.init(service_c82e22l);
-      })();
+      // Initialize EmailJS with your PUBLIC key
+      emailjs.init("D1kAEOFgpeA7mLjQe"); // <-- your public key
     </script>
     
     <script src="script.js"></script>
   </body>
+</html>
+    
+    <script src="script.js"></script>
+  </body>
+
 </html>
